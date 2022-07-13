@@ -39,10 +39,10 @@ int main(void)
             arr[pos]=temp;
         }
     }
+    gettimeofday(&t1, NULL);
     printf("The sorted array is :\n");
     for(i=0;i<num;i++)
     	printf("%ld\t",arr[i]);
-   	gettimeofday(&t1, NULL);
 	elapsed = timedifference_msec(t0, t1);
 	printf("\nCode executed in %f milliseconds.\n", elapsed);
 	return 0;
