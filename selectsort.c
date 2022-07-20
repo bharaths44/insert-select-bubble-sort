@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -12,17 +13,19 @@ int main(void)
 	struct timeval t0;
    	struct timeval t1;
    	float elapsed;
-   	long *arr;
-   	int i,j,temp,pos,num;
+   	int i,j,temp,pos,num,*arr;
    	printf("Enter number of elements :");
    	scanf("%d",&num);
-   	arr=(long *)malloc(sizeof(long)*num);
+   	arr=(int*)malloc(sizeof(int)*num);
    	srand((unsigned)time(NULL)*getpid());
    	if(arr!=NULL)
     {
         for(j = 0;j<num; j++)
             arr[j] = rand()%100;
     }
+    printf("Given array is \n");
+	for(i=0;i<num;i++)
+		printf(" | %d | ",arr[i]);
     gettimeofday(&t0, NULL);
 	for(i = 0; i < num - 1; i++)
     {
@@ -40,9 +43,9 @@ int main(void)
         }
     }
     gettimeofday(&t1, NULL);
-    printf("The sorted array is :\n");
+    printf("\nThe sorted array is :\n");
     for(i=0;i<num;i++)
-    	printf("%ld\t",arr[i]);
+    	printf(" | %d | ",arr[i]);
 	elapsed = timedifference_msec(t0, t1);
 	printf("\nCode executed in %f milliseconds.\n", elapsed);
 	return 0;
