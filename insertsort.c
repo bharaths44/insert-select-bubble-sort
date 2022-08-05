@@ -38,16 +38,15 @@ int main()
 		  		else
 		    		break;
 		}
-	 if (flag)
-		  arr[d+1] = t;
-	  }
-	  gettimeofday(&t1, NULL);
-	  printf("\nSorted list is:\n");
-	  for(i=0; i<num; i++) 
+	 	if (flag)
+		  	arr[d+1] = t;
+	  	}
+	  	gettimeofday(&t1, NULL);
+	  	printf("\nSorted list is:\n");
+	  	for(i=0; i<num; i++) 
 			printf(" | %d | ",arr[i]);
 		printf("\n");
-	   elapsed = timedifference_msec(t0, t1);
-	   printf("Code executed in %f milliseconds.\n", elapsed);
-
-	  return 0;
+		elapsed = timedifference_msec(t0, t1);
+	  	printf("Code executed in %f milliseconds.\n", elapsed);
+	  	return 0;
 }
