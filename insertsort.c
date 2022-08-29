@@ -10,7 +10,7 @@ int main()
 {
 	struct timeval t0;
 	struct timeval t1;
-	int i, d, t, flag = 0,j,num,*arr;
+	int i,t, flag = 0,j,num,*arr;
 	float elapsed;
 	printf("Enter number of elements in array :");
 	scanf("%d",&num);
@@ -28,18 +28,18 @@ int main()
 	for (i=1;i<=num-1; i++) 
 	{
 		t = arr[i];
-		for (d=i-1;d>=0;d--) 
+		for (j=i-1;j>=0;j--) 
 		{
-		  	if (arr[d] > t) 
+		  	if (arr[j] > t) 
 		  	{
-		    	arr[d+1] = arr[d];
+		    	arr[j+1] = arr[j];
 		    	flag = 1;
 		  	}
-		  		else
-		    		break;
+		  	else
+		    	break;
 		}
 	 	if (flag)
-		  	arr[d+1] = t;
+		  	arr[j+1] = t;
 	  	}
 	gettimeofday(&t1, NULL);
 	printf("\nSorted list is:\n");
