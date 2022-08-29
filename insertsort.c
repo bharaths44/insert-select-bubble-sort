@@ -36,7 +36,7 @@ int main()
 		    	flag = 1;
 		  	}
 		  	else
-		    	break;
+		    	 break;
 		}
 	 	if (flag)
 		  	arr[j+1] = t;
